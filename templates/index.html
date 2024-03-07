@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security News</title>
+    <style>
+        /* CSS for styling */
+        .hacker-news {
+            color: blue;
+        }
+
+        .krebs-security {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Security News</h1>
+    <ul>
+        {% for post in data %}
+        <li>
+            {% if post['website'] == "The Hacker News" %}
+            <h2 class="hacker-news">{{ post['title'] }}</h2>
+            {% elif post['website'] == "Krebs on Security" %}
+            <h2 class="krebs-security">{{ post['title'] }}</h2>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
